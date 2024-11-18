@@ -128,7 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="TextFinction.cpp" />
+    <ClCompile Include="TextQuest.cpp" />
+    <ClCompile Include="TextFunction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Detective.hpp" />
