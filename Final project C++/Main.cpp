@@ -15,7 +15,37 @@ int main() {
 
 // Сюжет и выборы
 	PrintText(Cabinet);
-	PauseText();
+	std::cout << "\n\n";
+	int Act0;
+	do {
+		PrintText(Act0Question);
+		std::cout << "\n";
+		std::cin >> Act0;
+		std::cout << "\n";
+
+		switch (Act0) {
+		case 1: {
+			assertiveness += 1;
+			PrintText(Cabinet2);
+			std::cout << "\n";
+			PauseText();
+			break;
+		}
+		case 2: {
+			diplomacy += 1;
+			PrintText(Cabinet2);
+			std::cout << "\n";
+			PauseText();
+			break;
+		}
+		case 3: {
+			Stats();
+			std::cout << '\n';
+			break;
+		}
+		}
+	} while (Act0 != 1 && Act0 != 2);
+
 	std::cout << "\n";
 
 	PrintText(Director);
@@ -47,9 +77,6 @@ int main() {
 		}
 	}
 	} while (Act1 != 1 && Act1 != 2);
-
-	PauseText();
-	std::cout << "\n";
 
 	PrintText(Director2); 
 	std::cout << "\n";
@@ -165,8 +192,70 @@ int main() {
 	std::cout << "\n";
 
 // Концовки
-if (observation == 2 && )
+	if (observation >= 2 && assertiveness >= 2 && table == 1) {
+		PrintText(GoodEndingAssertiveness1);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
+	if (observation >= 2 && diplomacy >= 2 && table == 1) {
+		PrintText(GoodEndingDiplomacy1);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
+	if (observation >= 2 && assertiveness >= 2 && window == 1) {
+		PrintText(GoodEndingAssertiveness2);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
+	if (observation >= 2 && diplomacy >= 2 && window == 1) {
+		PrintText(GoodEndingDiplomacy2);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
+	if (observation >= 2 && assertiveness >= 2 && chair == 1) {
+		PrintText(GoodEndingAssertiveness2);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
+	if (observation >= 2 && diplomacy >= 2 && chair == 1) {
+		PrintText(GoodEndingDiplomacy2);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
 
+	if (observation == 1 && assertiveness >= 2) {
+		PrintText(AverageEndingAssertiveness);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
+	if (observation == 1 && diplomacy >= 2) {
+		PrintText(AverageEndingDiplomacy);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
+
+	if (observation == 0 && assertiveness >= 2) {
+		system("color 40");
+		PrintText(BadEndingAssertiveness);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
+	if (observation == 0 && diplomacy >= 2) {
+		system("color 40");
+		PrintText(BadEndingDiplomacy);
+		std::cout << "\n\n";
+		PrintText(End);
+		std::cout << "\n\n";
+	}
 
 	return 0;
 }

@@ -27,7 +27,7 @@ void PrintText(const char* str) {
 		if (lines < 30) {
 			std::cout << str[current];
 			chars += 1;
-			if (str[current] == '\n' || (chars % 200 == 0 && chars != 0)) {
+			if (str[current] == '\n' || (chars % 300 == 0 && chars != 0)) {
 				lines += 1;
 			}
 			if (str[current] == '\n') {
